@@ -36,17 +36,27 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Normalización del movimiento
+        if (movement.magnitude > 1)
+        {
+            movement.Normalize();
+        }
+
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
     void Shoot()
     {
+        // Normalización de la dirección de disparo
         Vector2 direction = movement.normalized;
 
-        GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
-        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        rb.velocity = direction * projectileSpeed;
-        Destroy(projectile, projectileDestroyDelay);
+        if (direction.magnitude > 0)
+        {
+            GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+            Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+            rb.velocity = direction * projectileSpeed;
+            Destroy(projectile, projectileDestroyDelay);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
