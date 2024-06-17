@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Normalización del movimiento
         if (movement.magnitude > 1)
         {
             movement.Normalize();
@@ -47,7 +46,6 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
-        // Normalización de la dirección de disparo
         Vector2 direction = movement.normalized;
 
         if (direction.magnitude > 0)

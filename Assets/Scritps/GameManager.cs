@@ -94,5 +94,6 @@ public class GameManager : MonoBehaviour
     {
         heartCountText.text = "x " + linkLives.ToString();
     }
+
 }
 
