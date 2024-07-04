@@ -8,6 +8,11 @@ TagManager:
   - SpawnPoint
   - Projectile
   - EnemyProjectile
+  - Escape
+  - Key
+  - KeySpawnPoint
+  - LifeSpawnPoint
+  - Lifes
   layers:
   - Default
   - TransparentFX

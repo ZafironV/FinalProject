@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LOSE.unity
     guid: 3b3102ce0899fe34ba25decaf7cca951
+  - enabled: 1
+    path: Assets/Scenes/TrueEnding.unity
+    guid: b93cb862179ccc9469194f906593b1df
   m_configObjects: {}

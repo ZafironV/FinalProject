@@ -1,4 +1,6 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class Player : MonoBehaviour
     public float projectileSpeed = 10f;
     public GameManager gameManager;
     public float projectileDestroyDelay = 5f;
+    public int keyCount = 0;
     public Animator anim;
 
     void Start()
@@ -73,5 +76,24 @@ public class Player : MonoBehaviour
             gameManager.EnemyTouchLink();
             Destroy(other.gameObject);
         }
+
+        if (other.CompareTag("Key"))
+        {
+            keyCount++;
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("Escape"))
+        {
+            if (keyCount >= 4)
+            {
+                SceneManager.LoadScene("TrueEnding");
+            }
+            else
+            {
+                SceneManager.LoadScene("WIN");
+            }
+        }
     }
 }
+
