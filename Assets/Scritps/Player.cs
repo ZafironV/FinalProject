@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
 
         if (other.CompareTag("Escape"))
         {
-            if (keyCount >= 4)
+            if (keyCount >= 3)
             {
                 SceneManager.LoadScene("TrueEnding");
             }

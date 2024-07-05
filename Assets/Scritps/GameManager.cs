@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public int linkLives = 3;
     public string currentSceneName;
     public float enemySpawnInterval = 3f; // Tiempo de spawn para los enemigos
-    public float keySpawnInterval = 15f; // Tiempo de spawn para las llaves
+    public float keySpawnInterval = 20f; // Tiempo de spawn para las llaves
     public float lifeSpawnInterval = 10f; // Tiempo de spawn para las vidas
     public float gameDuration = 60f;
     private float timeRemaining;
