@@ -5055,7 +5055,7 @@ MonoBehaviour:
   linkLives: 3
   currentSceneName: Level
   enemySpawnInterval: 3
-  keySpawnInterval: 15
+  keySpawnInterval: 20
   lifeSpawnInterval: 10
   gameDuration: 60
   loseSceneName: LOSE
