@@ -1,4 +1,3 @@
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +15,10 @@ public class Player : MonoBehaviour
     public float projectileDestroyDelay = 5f;
     public int keyCount = 0;
     public Animator anim;
+    public CameraShake cameraShake;
+    public AudioSource audioSource;
+    public AudioClip keyPickupSound;
+    public AudioClip lifePickupSound;
 
     void Start()
     {
@@ -80,14 +83,23 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Key"))
         {
             keyCount++;
+            cameraShake.StartShake();
+            audioSource.PlayOneShot(keyPickupSound);
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("Lifes"))
+        {
+            gameManager.IncreaseLinkLives();
+            audioSource.PlayOneShot(lifePickupSound);
             Destroy(other.gameObject);
         }
 
         if (other.CompareTag("Escape"))
         {
-            if (keyCount >= 3)
+            if (keyCount >= 4)
             {
-                SceneManager.LoadScene("TrueEnding");
+                SceneManager.LoadScene("TE_Cinematic");
             }
             else
             {
@@ -96,4 +108,3 @@ public class Player : MonoBehaviour
         }
     }
 }
-

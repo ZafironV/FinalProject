@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TrueEnding.unity
     guid: b93cb862179ccc9469194f906593b1df
+  - enabled: 1
+    path: Assets/Scenes/TE_Cinematic.unity
+    guid: ec467af7aba23be4ba38ef8d94b2e15f
   m_configObjects: {}
